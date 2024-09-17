@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  background-color: rgba(88, 87, 87, 0.623);
+  margin: auto;
+}
+
+.custom-border {
+  border: 2px solid #000;
+}

@@ -29,6 +29,7 @@ const App = () => {
           </Link>
         </div>
       </div>
+
       <Routes>
         <Route path="/home" />
         <Route path="/React_Navbar" element={<Navbar />} />

@@ -1,0 +1,87 @@
+#root {
+  width: 100%;
+  height: 100vh; /* Fixed: Added 'vh' unit */
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.bdr {
+  border: 1px solid white;
+}
+
+/* Slider Animation Styles */
+/* .slide-container {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+} */
+
+.slide-content {
+  animation: 33s slide linear infinite;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+
+  margin: 15px;
+}
+.name {
+  object-fit: contain;
+}
+.name-slide {
+  position: relative;
+  display: flex;
+}
+/* .fgfhdf {
+  width: 200px;
+  display: flex;
+  position: relative;
+} */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.element {
+  overflow: hidden;
+  display: flex;
+  position: relative; /* Needed for absolute positioning of pseudo-elements */
+}
+
+.element::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 5rem; /* w-20 = 5rem (20 * 0.25rem) */
+  z-index: 10;
+  background: linear-gradient(to left, var(--background), transparent);
+}
+
+.dark .element::after {
+  background: linear-gradient(to left, var(--brand-dark), transparent);
+}
+
+.element::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5rem; /* w-20 = 5rem (20 * 0.25rem) */
+  z-index: 10;
+  background: linear-gradient(to right, var(--background), transparent);
+}
+
+.dark .element::before {
+  background: linear-gradient(to right, var(--brand-dark), transparent);
+}
